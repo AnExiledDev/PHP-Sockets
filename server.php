@@ -3,9 +3,10 @@
 
     $Socket = new Socket();
     $SocketConn = $Socket->CreateServerSocket("127.0.0.1", "1337");
+    $Socket->Listen($SocketConn);
 
     do {
-        $fromClient = $Socket->Listen($SocketConn);
+        $fromClient = $Socket->AcceptData($SocketConn);
 
         switch($fromClient) {
             case '1':

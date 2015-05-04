@@ -18,8 +18,11 @@ class Socket {
         return $socket;
     }
 
-    public function Listen($socket, $requestLimit = 10,  $maxLength = 10024) {
-        socket_listen($socket, $requestLimit);
+    public function Listen($socket, $requestLimit = 10) {
+        return socket_listen($socket, $requestLimit);
+    }
+
+    public function AcceptData($socket, $maxLength = 10024) {
         $accept     = socket_accept($socket);
         $fromClient = socket_read($accept, $maxLength);
 
