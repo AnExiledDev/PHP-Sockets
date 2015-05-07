@@ -1,5 +1,5 @@
 <?php
-    require_once "Socket.class.php";
+    require_once "../Socket.class.php";
 
     if(isset($_GET['req'])) {
         $req = $_GET['req'];
